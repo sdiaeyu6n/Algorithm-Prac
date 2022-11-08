@@ -1,12 +1,15 @@
 N = int(input())
-producers = []
-for x in range(10):
-    for y in range(10):
-        for z in range(10):
-            if 101 * x + 11 * y + 2 * z == N:
-                producers.append(str(x) + str(y) + str(z))
-if len(producers) == 0:
+producer = []
+numbers=[]
+
+for i in range(N):
+    sum=0
+    producer=list(str(i))
+    sum=int("".join(producer))
+    for j in producer:
+        sum+=int(j)
+    if N==sum:
+        numbers.append(i)
+if len(numbers)==0:
     print("0")
-else:
-    producers_int = list(map(int, producers))
-    print(min(producers_int))
+else: print(min(numbers))
