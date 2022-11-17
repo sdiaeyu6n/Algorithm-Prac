@@ -8,12 +8,7 @@ people.rotate(-(K-1))
 
 yose=[]
 for i in range(N):
-    if len(people) < K:
-        for j in people:
-            yose.append(str(j))
-        break
-    else:
-        yose.append(str(people.popleft()))
-        people.rotate(-(K-1))
+    yose.append(str(people.popleft()))
+    people.rotate(-(K-1))
 
 print("<"+", ".join(yose)+">")
