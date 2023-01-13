@@ -2,7 +2,7 @@ from collections import deque
 
 num_of_pc=int(input())
 num_of_con=int(input())
-connection=[[] for i in range(num_of_con)]
+
 graph=[[] for i in range(num_of_pc+1)]
 for i in range(num_of_con):
     n1,n2=map(int, input().split())
