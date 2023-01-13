@@ -3,24 +3,13 @@ from collections import deque
 num_of_pc=int(input())
 num_of_con=int(input())
 connection=[[] for i in range(num_of_con)]
-for i in range(num_of_con):
-    connection[i]=list(map(int,input().split()))
-
 graph=[[] for i in range(num_of_pc+1)]
-for con in connection:
-    for i in range(1,num_of_pc+1):
-        if i in con:
-            graph[i]+=con
-            graph[i].remove(i)
+for i in range(num_of_con):
+    n1,n2=map(int, input().split())
+    graph[n1].append(n2)
+    graph[n2].append(n1) # 양방향 그래프
 
-new_graph=[]
-for i in graph:
-    new_graph.append(list(set(i)))
-
-graph=new_graph[:]
-# print(graph)
-
-visited=[False]*num_of_pc
+visited=[False]*(num_of_pc+1)
 
 def bfs(start,visited,graph):
     global count
@@ -38,5 +27,3 @@ def bfs(start,visited,graph):
     return count
 
 print(bfs(1,visited,graph))
-
-            
