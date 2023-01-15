@@ -2,14 +2,12 @@ import sys
 
 N,M=map(int,sys.stdin.readline().split())
 board=[['0']*M for i in range(N)]
-new_board=[['0']*8 for i in range(8)]
 for i in range(N):
-    board[i]=list(sys.stdin.readline().strip("\n"))
-
-board_list=[]
-
+    board[i]=list(sys.stdin.readline().rstrip())
+board_list = []
 for i in range(N-8+1):
     for j in range(M-8+1):
+        new_board=[['0']*M for i in range(N)]
         for a in range(8):
             for b in range(8):
                 new_board[a][b]=board[i+a][j+b]
@@ -40,7 +38,7 @@ for b in board_list:
     for i in range(8):
         for j in range(8):
             if b[i][j]!=graph1[i][j]:
-                count1+=1
+                count1+=1  
             if b[i][j]!=graph2[i][j]:
                 count2+=1
     temp=min(temp,count1,count2)
