@@ -1,4 +1,4 @@
-# 🔹solved.ac
+# 🔹solved.ac & 이코테 책 문제
 시작일: 2022-11-06  
 사용 언어: Python3, PyPy3  
 사용 IDE: Visual Studio Code, PyCharm
