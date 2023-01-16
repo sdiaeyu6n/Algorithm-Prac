@@ -1,10 +1,8 @@
-import sys
+import sys,math
 
 A,B,V=map(int,sys.stdin.readline().split())
-count=1
-d=A
-while d<V:
-    d=d-B+A
-    count+=1
 
-print(count)
+if A>=V:
+    print(1)
+else:
+    print(math.ceil((V-A)/(-B+A)+1))
