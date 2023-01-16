@@ -1,14 +1,18 @@
 import sys
-from sympy import Symbol, solve
-import math
 
-d=Symbol('d')
 A,B,V=map(int,sys.stdin.readline().split())
 
-eq1=A*d-B*d-V # 답=d
-eq2=A*(d+1)-B*d-V # 답=d+1
+d1=0
+d2=0
+eq1=A*d1-B*d1-V # 답=d
+eq2=A*(d2+1)-B*d2-V # 답=d+1
 
-a1=math.ceil(solve(eq1)[0])
-a2=math.ceil(solve(eq2)[0])
+while eq1<0:
+    d1+=1
+    eq1=A*d1-B*d1-V # 답=d
 
-print(min(a1,a2+1))
+while eq2<0:
+    d2+=1
+    eq2=A*(d2+1)-B*d2-V # 답=d+1
+    
+print(min(d1,d2+1))
