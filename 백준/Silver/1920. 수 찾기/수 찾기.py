@@ -1,12 +1,6 @@
 # 시간복잡도 = O((M+N)logN)
 import sys
 
-N=int(sys.stdin.readline())
-# Tim Sort -> O(NlogN)
-N_list=sorted(list(map(int,sys.stdin.readline().split())))
-M=int(sys.stdin.readline())
-M_list=list(map(int,sys.stdin.readline().split()))
-
 # 이분탐색 M번 수행 -> O(MlogN)
 def binary_search(target,array,start,end):
     if start>end:
@@ -21,5 +15,11 @@ def binary_search(target,array,start,end):
     else:
         return binary_search(target,array,start,mid-1)
 
+N=int(sys.stdin.readline())
+# Tim Sort -> O(NlogN)
+N_list=sorted(list(map(int,sys.stdin.readline().split())))
+M=int(sys.stdin.readline())
+M_list=list(map(int,sys.stdin.readline().split()))
+
 for m in M_list:
-    binary_search(m,N_list,0,N-1)
+    binary_search(m,N_list,0,N-1) #범위 유의(end=N-1)
