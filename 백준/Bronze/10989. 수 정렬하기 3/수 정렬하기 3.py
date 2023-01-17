@@ -8,5 +8,5 @@ for i in range(N):
 
 for i in range(10001):
     if num[i]!=0:
-        for j in range(num[i]):
+        for _ in range(num[i]):
             print(i)
