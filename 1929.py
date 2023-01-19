@@ -1,18 +1,15 @@
 import sys, math
 
 M,N=map(int,sys.stdin.readline().split())
-num_list=[0]*(N-M+1)
+num_list=[False,False]+[True]*(N-1)
+primes=[]
 
-for i in range(M,N+1):
-    if i==1:
-        num_list[i-M]+=1
-    elif i==2 or i==3 or i==5 or i==7:
-        continue
-    else:
-        test=(int(math.sqrt(i)) == math.sqrt(i))
-        if i%2==0 or i%3==0 or i%5==0 or i%7==0 or test:
-            num_list[i-M]+=1  
-         
-for i in range(M,N+1):
-    if num_list[i-M]==0:
+for i in range(2,N+1):
+    if num_list[i]:
+        primes.append(i)
+        for j in range(2*i,N+1,i):
+            num_list[j]=False
+
+for i in primes:
+    if i>=M:
         print(i)
