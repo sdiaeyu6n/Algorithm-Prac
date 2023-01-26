@@ -1,14 +1,16 @@
+import sys
+sys.setrecursionlimit(10**6)
 def dfs(start,graph,visited):
     visited[start]=True
     for i in graph[start]:
         if not visited[i]:
             dfs(i,graph,visited)
 
-N,M=map(int, input().split())
+N,M=map(int, sys.stdin.readline().split())
 graph=[[] for _ in range(N+1)]
 
 for i in range(M):
-    n1,n2=map(int,input().split())
+    n1,n2=map(int,sys.stdin.readline().split())
     graph[n1].append(n2)
     graph[n2].append(n1)
 
