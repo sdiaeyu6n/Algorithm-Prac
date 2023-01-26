@@ -15,10 +15,8 @@ for i in range(M):
 visited=[False]*(N+1)
 
 num=0    
-for i in range(N):
-    for j in graph[i]:
-        if not visited[j]:
-            dfs(j,graph,visited)
-            num+=1
-
+for j in range(1,N+1):
+    if not visited[j]:
+        dfs(j,graph,visited)
+        num+=1
 print(num)
