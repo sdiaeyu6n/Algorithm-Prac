@@ -1,4 +1,5 @@
 from collections import deque
+import sys
 
 def bfs(x,y,graph):
         global count
@@ -15,13 +16,13 @@ def bfs(x,y,graph):
                     graph[nx][ny]=0
         count+=1
 
-tc=int(input())
+tc=int(sys.stdin.readline())
 for _ in range(tc):
-    m,n,k=map(int, input().split())
+    m,n,k=map(int, sys.stdin.readline().split())
     graph=[[0 for _ in range(m)] for _ in range(n)]
 
     for i in range(k):
-        y,x=map(int, input().split())
+        y,x=map(int, sys.stdin.readline().split())
         graph[x][y]=1
 
     dx=[-1,1,0,0]
